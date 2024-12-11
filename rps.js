@@ -29,6 +29,9 @@ function playRound (humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice(3);
 
+    let humanScore = 0;
+    let computerScore = 0;
+
     console.log(`You chose:  ${humanChoice}`);
     console.log(`Computer chose: ${computerChoice}`);
 
@@ -40,13 +43,15 @@ function playRound (humanChoice, computerChoice) {
         (humanChoice == "scissors" && computerChoice == "paper")
     ) {
         console.log("You win!");
+        humanScore += 1;
     } else {
         console.log("You lose!");
+        computerScore += 1;
     }
-
+    
+    console.log(`\nSCORE`);
+    console.log("Human: " + humanScore);
+    console.log("Computer: " + computerScore);
 }
 
 playRound();
-
-// let humanScore = 0;
-// let computerScore = 0;
