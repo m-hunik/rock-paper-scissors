@@ -25,33 +25,42 @@ function getComputerChoice(max) {
     }
 }
 
-function playRound (humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice(3);
+function playGame() {
 
-    let humanScore = 0;
-    let computerScore = 0;
+    let roundCounter = 0;
 
-    console.log(`You chose:  ${humanChoice}`);
-    console.log(`Computer chose: ${computerChoice}`);
-
-    if (humanChoice == computerChoice) {
-        console.log("Draw!")
-    } else if (
-        (humanChoice == "rock" && computerChoice == "scissors") ||
-        (humanChoice == "paper" && computerChoice == "rock") ||
-        (humanChoice == "scissors" && computerChoice == "paper")
-    ) {
-        console.log("You win!");
-        humanScore += 1;
-    } else {
-        console.log("You lose!");
-        computerScore += 1;
-    }
+    function playRound (humanChoice, computerChoice) {
+        humanChoice = getHumanChoice();
+        computerChoice = getComputerChoice(3);
     
-    console.log(`\nSCORE`);
-    console.log("Human: " + humanScore);
-    console.log("Computer: " + computerScore);
+        let humanScore = 0;
+        let computerScore = 0;
+
+        console.log(`You chose:  ${humanChoice}`);
+        console.log(`Computer chose: ${computerChoice}`);
+    
+        if (humanChoice == computerChoice) {
+            console.log("Draw!")
+        } else if (
+            (humanChoice == "rock" && computerChoice == "scissors") ||
+            (humanChoice == "paper" && computerChoice == "rock") ||
+            (humanChoice == "scissors" && computerChoice == "paper")
+        ) {
+            console.log("You win!");
+            humanScore += 1;
+        } else {
+            console.log("You lose!");
+            computerScore += 1;
+        }
+
+        console.log("Human: " + humanScore + " " + "Computer: " + computerScore);
+    }
+    playRound();
+    return roundCounter += 1;
 }
 
-playRound();
+let scoreKeeper = playGame();
+for (let i = scoreKeeper; i < 5; i++) {
+    playGame();
+}
+
