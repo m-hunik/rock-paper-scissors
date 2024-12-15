@@ -5,7 +5,10 @@ function getHumanChoice() {
     
     if (result === "rock" || result === "paper" || result === "scissors") {
         return result;
-    } else {return "Only r, p or s!"}
+    } else { 
+        console.log("Only r, p or s!");
+        return "rock"
+    }
 }
 
 function getComputerChoice(max) {
