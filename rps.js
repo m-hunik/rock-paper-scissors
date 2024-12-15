@@ -3,15 +3,9 @@ function getHumanChoice() {
 
     let result = prompt("Rock, paper or scissors?");
     
-    if (result == "rock") {
+    if (result === "rock" || result === "paper" || result === "scissors") {
         return result;
-    } else if (result == "paper") {
-        return result;
-    } else if (result == "scissors") {
-        return result;
-    } else {
-        return "Only r, p or s!"
-    }
+    } else {return "Only r, p or s!"}
 }
 
 function getComputerChoice(max) {
