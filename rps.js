@@ -2,9 +2,10 @@
 function getHumanChoice() {
 
     let result = prompt("Rock, paper or scissors?");
-    
-    if (result === "rock" || result === "paper" || result === "scissors") {
-        return result;
+    let cResult = result.toLowerCase();
+
+    if (cResult === "rock" || cResult === "paper" || cResult === "scissors") {
+        return cResult;
     } else { 
         console.log("Only r, p or s!");
         return "rock"
