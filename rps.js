@@ -41,30 +41,32 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-// function playGame(rounds = 5) {
+/*function playGame(rounds = 5) {
 
-//     let humanScore = 0;
-//     let computerScore = 0;
+    let humanScore = 0;
+    let computerScore = 0;
 
-//     for(let i = 0; i < rounds; i++) {
+    for(let i = 0; i < rounds; i++) {
 
-//         let humanChoice = getHumanChoice();
-//         let computerChoice = getComputerChoice(3);
-//         let result = playRound(humanChoice, computerChoice);
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice(3);
+        let result = playRound(humanChoice, computerChoice);
 
-//         if (result === "human") {humanScore++;}
-//         else if (result === "computer") {computerScore++;}
+        if (result === "human") {humanScore++;}
+        else if (result === "computer") {computerScore++;}
 
-//         console.log("Human: " + humanScore + " " + "Computer: " + computerScore);
-//     }
-// }
+        console.log("Human: " + humanScore + " " + "Computer: " + computerScore);
+    }
+}
 
-// playGame();
+playGame();*/
 
+// Targets particular nodes with selectors
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
+// Attaches listeners to the nodes
 rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
 paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
 scissors.addEventListener("click", () =>
