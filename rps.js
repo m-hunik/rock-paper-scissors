@@ -60,3 +60,9 @@ function playRound(humanChoice, computerChoice) {
 // }
 
 // playGame();
+
+const rock = document.querySelector("button");
+const paper = document.querySelector("button");
+const scissors = document.querySelector("button");
+
+button.addEventListener("click", playRound);
