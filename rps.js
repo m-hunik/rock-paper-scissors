@@ -26,7 +26,7 @@ function playRound(humanChoice, computerChoice) {
   console.log(`You chose:  ${humanChoice}`);
   console.log(`Computer chose: ${computerChoice}`);
 
-  if (humanChoice == computerChoice) {
+  if (humanChoice === computerChoice) {
     console.log("Draw!");
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -61,8 +61,10 @@ function playRound(humanChoice, computerChoice) {
 
 // playGame();
 
-const rock = document.querySelector("button");
-const paper = document.querySelector("button");
-const scissors = document.querySelector("button");
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
-button.addEventListener("click", playRound);
+rock.addEventListener("click", () => playRound("rock"));
+paper.addEventListener("click", () => playRound("paper"));
+scissors.addEventListener("click", () => playRound("scissors"));
