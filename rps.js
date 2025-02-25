@@ -60,9 +60,9 @@ const resultDiv = document.querySelector("#results");
 }
 
 function disableButtons() {
-  document.querySelector("#rock").disabled = true;
-  document.querySelector("#paper").disabled = true;
-  document.querySelector("#scissors").disabled = true;
+  rock.disabled = true;
+  paper.disabled = true;
+  scissors.disabled = true;
 }
 
 /*function playGame(rounds = 5) {
