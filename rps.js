@@ -1,14 +1,17 @@
-function getHumanChoice() {
-  let result = prompt("Rock, paper or scissors?");
-  let cResult = result.toLowerCase();
+// function getHumanChoice() {
+//   let result = prompt("Rock, paper or scissors?");
+//   let cResult = result.toLowerCase();
 
-  if (cResult === "rock" || cResult === "paper" || cResult === "scissors") {
-    return cResult;
-  } else {
-    console.log("Only r, p or s!");
-    return "rock";
-  }
-}
+//   if (cResult === "rock" || cResult === "paper" || cResult === "scissors") {
+//     return cResult;
+//   } else {
+//     console.log("Only r, p or s!");
+//     return "rock";
+//   }
+// }
+
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(max) {
   let random = Math.floor(Math.random() * max);
@@ -23,23 +26,26 @@ function getComputerChoice(max) {
 }
 
 function playRound(humanChoice, computerChoice) {
-  console.log(`You chose:  ${humanChoice}`);
-  console.log(`Computer chose: ${computerChoice}`);
+const resultDiv = document.querySelector("#results");
+let resultMessage = "";
 
   if (humanChoice === computerChoice) {
-    console.log("Draw!");
+    resultMessage = `You chose: ${humanChoice}. Computer chose: ${computerChoice}. Draw!`
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
-    console.log("You win!");
-    return "human";
+    humanScore++;
+    resultMessage = `You chose: ${humanChoice}. Computer chose: ${computerChoice}. You win!`
   } else {
-    console.log("You lose!");
-    return "computer";
+    computerScore++;
+    resultMessage = `You chose: ${humanChoice}. Computer chose: ${computerChoice}. You lose!`
   }
 }
+
+resultDiv.innerHTML = `<p>${resultMessage}</p>
+<p>Score - You: ${humanScore} | Computer: ${computerScore}</p>`;
 
 /*function playGame(rounds = 5) {
 
