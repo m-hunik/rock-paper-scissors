@@ -52,9 +52,17 @@ function checkWinner() {
 const resultDiv = document.querySelector("#results");
   if (humanScore === 5) {
     resultDiv.innerHTML += `<p>You win the game! Refresh to play again.</p>`
+    disableButtons();
   } else if (computerScore === 5) {
     resultDiv.innerHTML += `<p>Computer wins the game! Refresh to play again.</p>`
-  }
+    disableButtons();
+    }
+}
+
+function disableButtons() {
+  document.querySelector("#rock").disabled = true;
+  document.querySelector("#paper").disabled = true;
+  document.querySelector("#scissors").disabled = true;
 }
 
 /*function playGame(rounds = 5) {
