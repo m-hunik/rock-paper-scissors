@@ -42,10 +42,20 @@ let resultMessage = "";
     computerScore++;
     resultMessage = `You chose: ${humanChoice}. Computer chose: ${computerChoice}. You lose!`
   }
+  resultDiv.innerHTML = `<p>${resultMessage}</p>
+  <p>Score - You: ${humanScore} | Computer: ${computerScore}</p>`;
+
+  checkWinner();
 }
 
-resultDiv.innerHTML = `<p>${resultMessage}</p>
-<p>Score - You: ${humanScore} | Computer: ${computerScore}</p>`;
+function checkWinner() {
+const resultDiv = document.querySelector("#results");
+  if (humanScore === 5) {
+    resultDiv.innerHTML += `<p>You win the game!</p>`
+  } else if (computerScore === 5) {
+    resultDiv.innerHTML += `<p>Computer wins the game!</p>`
+  }
+}
 
 /*function playGame(rounds = 5) {
 
