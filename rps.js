@@ -13,8 +13,8 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice(max) {
-  let random = Math.floor(Math.random() * max);
+function getComputerChoice() {
+  let random = Math.floor(Math.random() * 3);
 
   if (random == 0) {
     return "rock";
@@ -51,9 +51,9 @@ let resultMessage = "";
 function checkWinner() {
 const resultDiv = document.querySelector("#results");
   if (humanScore === 5) {
-    resultDiv.innerHTML += `<p>You win the game!</p>`
+    resultDiv.innerHTML += `<p>You win the game! Refresh to play again.</p>`
   } else if (computerScore === 5) {
-    resultDiv.innerHTML += `<p>Computer wins the game!</p>`
+    resultDiv.innerHTML += `<p>Computer wins the game! Refresh to play again.</p>`
   }
 }
 
